@@ -19,7 +19,7 @@ function Header() {
               width={50}
               height={50}
             />
-            <div>Weather Forecast</div>
+            <p className="text-2xl">Weather Forecast</p>
           </li>
           <li>
             {loggedIn && (
