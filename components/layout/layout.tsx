@@ -1,3 +1,4 @@
+import useSetData from "@/hooks/useSetData";
 import { Fragment } from "react";
 import Header from "../header";
 
@@ -6,9 +7,12 @@ interface LayoutProps {
 }
 
 function Layout(props: LayoutProps) {
+  const { user } = useSetData();
+  const loggedIn = !!user;
+
   return (
     <Fragment>
-      <Header />
+      <Header loggedIn={loggedIn} />
       <main>{props.children}</main>
     </Fragment>
   );

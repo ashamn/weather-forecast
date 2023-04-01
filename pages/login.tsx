@@ -1,8 +1,8 @@
 import Button from "@/components/ui/button";
-import useAuthUser from "@/hooks/usePushRoutes";
+import usePushRoutes from "@/hooks/usePushRoutes";
 
 function Login() {
-  const { login } = useAuthUser();
+  const { login } = usePushRoutes();
 
   return (
     <>
