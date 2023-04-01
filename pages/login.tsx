@@ -1,5 +1,5 @@
 import Button from "@/components/ui/button";
-import useAuthUser from "@/hooks/useAuthUser";
+import useAuthUser from "@/hooks/usePushRoutes";
 
 function Login() {
   const { login } = useAuthUser();

@@ -1,10 +1,14 @@
-import useAuthUser from "@/hooks/useAuthUser";
+import useAuthUser from "@/hooks/usePushRoutes";
+import useSetData from "@/hooks/useSetData";
+import { useUserContext } from "@/hooks/useUserContext";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import Image from "next/image";
+import { useEffect } from "react";
 import Button from "./ui/button";
 
 function Header() {
-  const { logout, user } = useAuthUser();
+  const { logout } = useAuthUser();
+  const { user } = useSetData();
   const loggedIn = !!user;
 
   return (

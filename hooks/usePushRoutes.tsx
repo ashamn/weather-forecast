@@ -1,8 +1,7 @@
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
 
-function useAuthUser() {
-  const { user, isLoading, error } = useUser();
+function usePushRoutes() {
   const router = useRouter();
   const { push } = router;
 
@@ -22,15 +21,17 @@ function useAuthUser() {
     push("/home");
   };
 
+  const toWeatherPage = () => {
+    push("/weather");
+  };
+
   return {
     logout,
     login,
     toLoginPage,
     toHomePage,
-    user,
-    isLoading,
-    error,
+    toWeatherPage,
   };
 }
 
-export default useAuthUser;
+export default usePushRoutes;
