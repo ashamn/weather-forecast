@@ -1,6 +1,6 @@
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useEffect } from "react";
-import { useUserContext } from "./useUserContext";
+import { useUserContext } from "./context/useUserContext";
 
 function useSetData() {
   const { user, isLoading, error } = useUser();

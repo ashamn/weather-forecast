@@ -1,6 +1,6 @@
 import Loading from "@/components/ui/loading";
 import usePushRoutes from "@/hooks/usePushRoutes";
-import { useUserContext } from "@/hooks/useUserContext";
+import { useUserContext } from "@/hooks/context/useUserContext";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useEffect, useState } from "react";
 

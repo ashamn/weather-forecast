@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { useUserContext } from "./useUserContext";
+import { useUserContext } from "./context/useUserContext";
 
 function useUserDetails() {
-  const { user } = useUserContext();
-  const [userData, setUserData] = useState(null);
+  const { user, userData, setUserData } = useUserContext();
 
   useEffect(() => {
     if (!!user?.sub && !userData) {
@@ -17,7 +16,7 @@ function useUserDetails() {
       };
       getUserDetails();
     }
-  }, [user, userData]);
+  }, [user, userData, setUserData]);
 
   return {
     userData,
