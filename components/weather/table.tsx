@@ -1,7 +1,6 @@
 import { useWeatherContext } from "@/hooks/context/useWeatherContext";
 import { useEffect, useMemo, useState } from "react";
 import format from "date-fns/format";
-import id from "date-fns/locale/id";
 
 function WeatherTable() {
   const [mobileView, setMobileView] = useState(false);
@@ -9,9 +8,7 @@ function WeatherTable() {
   const date = useMemo(
     () =>
       weatherData?.dt
-        ? format(new Date(weatherData?.dt), `EEEE, d MMM yyyy 'pukul' HH:mm`, {
-            locale: id,
-          })
+        ? format(new Date(weatherData?.dt * 1000), `MM/dd/yyyy`)
         : "",
     [weatherData?.dt]
   );
