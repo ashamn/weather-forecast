@@ -34,23 +34,6 @@ function WeatherTable() {
   }, []);
 
   // Apply changes acc to view
-  // let tableHead = [];
-  // let data = [];
-
-  // if (mobileView) {
-  //   tableHead = ["Date (mm/dd/yyyy)", "Temp (F)"];
-  //   data = [date, weatherData?.main.temp];
-  // } else {
-  //   tableHead = [
-  //     "Date (mm/dd/yyyy)",
-  //     "Temp (F)",
-  //     "Description",
-  //     "Main",
-  //     "Pressure",
-  //     "Humidity",
-  //   ];
-  // }
-
   const tableData = useMemo(() => {
     if (weatherData) {
       let tableHead = [];
