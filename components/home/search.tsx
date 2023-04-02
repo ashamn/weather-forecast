@@ -17,7 +17,6 @@ function Search(props: SearchProps) {
     },
     [setCity]
   );
-  console.log("city :>> ", city);
 
   return (
     <div className="flex justify-center">
