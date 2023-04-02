@@ -3,7 +3,7 @@ import UserDetails from "@/components/home/userDetails";
 import { useWeatherContext } from "@/hooks/context/useWeatherContext";
 import usePushRoutes from "@/hooks/usePushRoutes";
 import useUserDetails from "@/hooks/useUserDetails";
-import { useEffect } from "react";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 function Home() {
   const { userData } = useUserDetails();
@@ -34,4 +34,9 @@ function Home() {
     </>
   );
 }
+
+export const getServerSideProps = withPageAuthRequired({
+  returnTo: "/home",
+});
+
 export default Home;

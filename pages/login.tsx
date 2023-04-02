@@ -1,8 +1,17 @@
 import Button from "@/components/ui/button";
+import { useUserContext } from "@/hooks/context/useUserContext";
 import usePushRoutes from "@/hooks/usePushRoutes";
+import { useEffect } from "react";
 
 function Login() {
-  const { login } = usePushRoutes();
+  const { login, toHomePage } = usePushRoutes();
+  const { user } = useUserContext();
+
+  useEffect(() => {
+    if (user) {
+      toHomePage();
+    }
+  }, [user, toHomePage]);
 
   return (
     <>

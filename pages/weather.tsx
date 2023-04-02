@@ -1,7 +1,7 @@
 import Button from "@/components/ui/button";
 import WeatherTable from "@/components/weather/table";
-import { useWeatherContext } from "@/hooks/context/useWeatherContext";
 import usePushRoutes from "@/hooks/usePushRoutes";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 function Weather() {
   const { toHomePage } = usePushRoutes();
@@ -17,5 +17,9 @@ function Weather() {
     </div>
   );
 }
+
+export const getServerSideProps = withPageAuthRequired({
+  returnTo: "/home",
+});
 
 export default Weather;
